@@ -1,0 +1,64 @@
+body {
+    height: 100vh;
+    background: url('https://github.com/normanbareo/Norman-Patrick-Bareo-TC02-/blob/main/FA5/Assets/brown-wood-textured-background-with-design-space.jpg?raw=true') no-repeat;
+    background-size: cover;
+    font-family: 'Indie Flower', cursive;
+    background-repeat: repeat-y;
+}
+.scrapbook-title {
+    background-color: #ffeb3b;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+    transform: rotate(-2deg);
+    position: relative;
+    font-weight: bold;
+}
+.polaroid {
+    padding: 15px;
+    background: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 1;
+    height: auto;
+}
+.polaroid img {
+    width: 100%;
+    height: auto;
+    border-bottom: 10px solid white;
+}
+.content {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.horizontal-polaroid {
+    padding: 10px;
+}
+.horizontal-polaroid img {
+    border-bottom: 2px solid white;
+}
+.content p {
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.horizontal-polaroid-1 {
+    transform: rotate(-3deg);
+}
+.horizontal-polaroid-2 {
+    transform: rotate(-2deg);
+}
+.horizontal-polaroid-3 {
+    transform: rotate(3deg);
+}
+.horizontal-polaroid-4 {
+    transform: rotate(2deg);
+}
