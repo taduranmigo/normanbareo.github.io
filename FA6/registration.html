@@ -80,6 +80,8 @@
         .inline-group input[type="tel"],
         .inline-group input[type="date"],
         .inline-group input[type="text"],
+        .inline-group input[type="password"],
+        .inline-group input[type="password"],
         .inline-group select {
             padding: 5px;
             font-size: 14px;
@@ -95,6 +97,8 @@
         input[type="email"],
         input[type="tel"],
         input[type="date"],
+        input[type="password"],
+        input[type="password"],
         select {
             width: 100%;
             padding: 5px;
@@ -391,7 +395,7 @@
             <div class="col-lg-6 bg-gray">
                 <div class="right-content text-center">
                     <img src="https://lh3.googleusercontent.com/d/1OYeIo8YG5f4KoxpS7OF-YHKLsVygpml0" alt="Company Logo" class="company-logo mb-4">
-                    <form>
+                    <form id="passwordForm">
                         <div class="form-group">
                             <h2><strong>Student Information</strong></h2>
                             <label for="firstName"><strong>Student Name</strong> <span style="color: red;">*</span></label>
@@ -452,6 +456,23 @@
                                     <input type="tel" id="phone" name="phone" placeholder="+63" required inputmode="numeric" pattern="\d*">
                                 </div>
                             </div>
+                        
+    
+                          
+                                <div class="form-group">
+                                    <div class="inline-group">
+                                        <label for="password"><strong>Password</strong> <span style="color: red;">*</span></label>
+                                        <label for="confirm_password"><strong>Confirm Password</strong> <span style="color: red;">*</span></label>
+                                    
+                                    </div>
+                                    <div class="inline-group">
+                                        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                                    </div>
+                                </div>
+                      
+                        
+                           
                             <div class="form-group">
                                 <label for="streetAddress"><strong>Home Address</strong> <span style="color: red;">*</span></label>
                                 <input type="text" id="streetAddress" name="streetAddress" placeholder="Street Address" required>
@@ -579,7 +600,7 @@
                                 <br>
                                 <div class="additional-section">
                                     <h2><strong>Parent Information</strong> </h2>
-                                    <!-- Mother's Information -->
+                                
                                     <div class="form-group">
                                         <div class="inline-group">
                                             <label for="motherFirstName"><strong>Mother Name</strong> <span style="color: red;">*</span></label>
@@ -602,7 +623,7 @@
                                          
                                         </div>
                                     </div>
-                                    <!-- Father's Information -->
+                                  
                                     <div class="form-group">
                                         <div class="inline-group">
                                             <label for="fatherFirstName"><strong>Father Name</strong><span style="color: red;">*</span></label>
@@ -627,7 +648,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <!-- Additional section for Guardian's information -->
+                                
                                 <div class="additional-section">
                                     <h2><strong>Guardian Information</strong></h2>
                                     <div class="form-group">
@@ -667,12 +688,32 @@
                         <br>
                         <br>
                         <div class="button-container">
-                            <button type="submit" onclick="submitToPage();">REGISTER STUDENT</button>
+                                <button type="submit">REGISTER STUDENT</button>
+                            
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            else {
+                alert('Your student portal account has been activated. You may now log in to your account.');
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+    
 </body>
 </html>
