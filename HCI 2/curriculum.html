@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - FEU TECH</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #323232;
+            display: flex;
+            font-size: 13px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color:  #f5f6f5 ;
+        }
+
+        .sidebar {
+            background-color: #004b1c;
+            color: white;
+            width: 21%;
+            height: fit-content;
+            position: absolute;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: visible;
+            padding-bottom: 100px;
+            
+        }
+
+       
+        .sidebar .logo {
+            width: 50%;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .sidebar .main-category {
+            margin: 10px 0;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: -5px;
+        }
+
+        .sidebar .main-category, .subcategories{
+            padding-left: 15px;
+        }
+
+        .sidebar .subcategories {
+            margin-left: 10px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .subcategories a {
+            color: white;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .sidebar .subcategories a:hover {
+    background-color: #fcbd14;
+    color: #078249;
+    font-weight: 600;
+    padding-left: 20px; /* Adjust the padding to reposition the highlight */
+    width: calc(100% - 20px); /* Adjust the width to change the length of the highlight */
+}
+
+.sidebar .subcategories a.active {
+    background-color: #fcbd14;
+    color: #078249;
+    font-weight: 600;
+    padding-left: 20px; /* Adjust the padding to reposition the highlight */
+    width: calc(100% - 20px); /* Adjust the width to change the length of the highlight */
+}
+
+
+        .sidebar img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .header {
+            background-color: #f5f6f5;
+            padding: 10px 40px;
+            width: calc(100% - 21%);
+            margin-left: 21%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px dotted #ccc;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: bold;
+            color: #004b1c;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .profile-container:hover {
+            background-color: #e4e4e4;
+            border-radius: 5px;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #c5c5c5;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 28px, rgba(0, 0, 0, 0.08) 0px 10px 10px;
+            width: 163px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #323232;
+            border-bottom: 0px dotted #ccc;
+            font-weight: 400;
+            margin: 5px;
+        }
+
+        .dropdown a:hover {
+            background-color: #d1d1d1;
+            color: #fff;
+        }
+
+        .profile-container.active .dropdown {
+            display: block;
+        }
+
+        .triangle {
+            margin-left: 5px;
+        }
+
+       
+
+        .main-content {
+            margin-left: 20%; /* Width of sidebar */
+    margin-top: 80px; /* Height of header */
+    padding-left: 55px; /* Extra padding to align with sidebar content */
+    background-color:  #f5f6f5; /* Adjusted background color */
+    min-height: calc(100vh - 120px); /* Full viewport height minus header and footer */
+    box-sizing: border-box;
+    display: flex;
+   
+    align-items: center;
+    width: 100%;
+}
+
+.program-info-legend, .term-1, .term-2, .term-3 {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 40px; /* Increased margin between sections */
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+            width: 170%;
+            
+        }
+
+.container {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.program-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.program-info p {
+    margin: 5px 0;
+}
+
+
+.legend p {
+    margin: 0 15px 5px 0;
+}
+
+.legend span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.legend-taken { background-color: green; }
+.legend-current { background-color: blue; }
+.legend-not-taken { background-color: red; }
+.legend-incomplete { background-color: yellow; }
+.legend-credited { background-color: orange; }
+
+.term h3 {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px;
+    margin: -20px -20px 10px;
+    font-size: 1.3em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f1f1f1;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+tfoot td[colspan="2"] {
+    text-align: right;
+}
+
+
+   
+
+       
+        .footer {
+            background-color: #f5f6f5;
+            padding: 10px 20px;
+            margin-left: -25px;
+           
+            width: 80%;
+            bottom: 0;
+            border-top: 1px dotted #9999;
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            z-index: 1; /* Ensure it appears above main content */
+        }
+
+        .footer .left {
+            color: #9999;
+            font-size: 10px;
+            
+        }
+
+        .footer .right {
+            font-size: 10px;
+            color: #9999;
+            margin-right: 4%;
+        }
+    </style>
+    <script>
+
+        function toggleDropdown() {
+            var profileContainer = document.querySelector('.profile-container');
+            profileContainer.classList.toggle('active');
+        }
+
+        
+        function highlightCategory(category) {
+    var activeItem = document.querySelector('.sidebar .subcategories a.active');
+    if (activeItem && activeItem !== category) {
+        activeItem.classList.remove('active');
+    }
+    category.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var profileLink = document.querySelector('.sidebar .subcategories a.active');
+    highlightCategory(profileLink);
+});
+
+document.querySelectorAll('.sidebar .subcategories a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        var profileLink = document.querySelector('.sidebar .subcategories a.active');
+        if (profileLink) {
+            profileLink.classList.remove('active');
+        }
+        highlightCategory(this);
+    });
+});
+
+
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/62/FEU_Tech_official_seal.png" alt="School Logo" class="logo">
+        <h2 class="main-category">My Account</h2>
+        <div class="subcategories">
+            <a href="profile.html">Profile</a>
+            <a href="curriculum.html" class="active">Curriculum</a>
+            <a href="#">Course Card</a>
+            <a href="#">COR</a>
+            <a href="#">Balance Inquiry</a>
+            <a href="#">Clearance</a>
+            <a href="#">Admission Requirements Compliance</a>
+        </div>
+        <h2 class="main-category">Academics</h2>
+        <div class="subcategories">
+            <a href="#">Parallel Courses</a>
+            <a href="#">Course Offerings</a>
+        </div>
+        <h2 class="main-category">Services</h2>
+        <div class="subcategories">
+            <a href="https://ofes.feutech.edu.ph/">Online Faculty Evaluation</a>
+            <a href="#">Online Public Access Catalogue</a>
+            <a href="#">Online Fitness Reservation</a>
+        </div>
+        <h2 class="main-category">OSES</h2>
+        <div class="subcategories">
+            <a href="https://students.feutech.edu.ph/oses/">Register</a>
+            <a href="https://revisereg.feutech.edu.ph/">COR Revision</a>
+            <a href="https://students.feutech.edu.ph/_public/downloads/UM-OCOR.pdf">COR Revision User Guide</a>
+            <a href="https://www.youtube.com/watch?v=ftKh6_WZupk&feature=youtu.be">OSES Tutorial</a>
+            <a href="https://students.feutech.edu.ph/_public/downloads/USERS%20GUIDE%20-%20OSES.pdf">OSES User Guide</a>
+        </div>
+        <h2 class="main-category">Others</h2>
+        <div class="subcategories">
+            <a href="https://students.feutech.edu.ph/_public/downloads/User%20Guide%20-%20Software%20and%20Services%20Package.pdf">User Guide - Software and Service Package</a>
+            <a href="https://students.feutech.edu.ph/_public/downloads/CMO_No.104%20S.2017.pdf">CMO Guidelines</a>
+        </div>
+    </div>
+    
+    <div class="header">
+        <h1>FEU-Tech Student Portal</h1>
+        <div class="profile-container" onclick="toggleDropdown()">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+            <span>Student Name <span class="triangle">&#x25BC;</span></span>
+            <div class="dropdown">
+                <a href="profile.html">Profile</a>
+                <a href="https://feu.instructure.com/">Canvas</a>
+                <a href="https://www.microsoft365.com/">Microsoft 365</a>
+                <a href="#">Change Password</a>
+                <a href="login.html">Log Out</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 container program-info-legend">
+                <div class="program-info">
+                    <h2>Curriculum</h2>
+                    <p><strong>Program:</strong> BSITBA</p>
+                    <p><strong>Year Level:</strong> 1</p>
+                    <p><strong>Curriculum Code:</strong> BSITBA2024</p>
+                    <p><strong>Units:</strong> Required: 204 | Credited: 0 | Passed: 0 | Current: 17 | Left: 187</p>
+                </div>
+                <div class="legend">
+                    <p><span class="legend-taken"></span> Taken</p>
+                    <p><span class="legend-current"></span> Current</p>
+                    <p><span class="legend-not-taken"></span> Not Yet Taken</p>
+                    <p><span class="legend-incomplete"></span> Incomplete</p>
+                    <p><span class="legend-credited"></span> Credited</p>
+                </div>
+            </div>
+    
+            <div class="col-md-12 container term-1">
+                <h3>1st Year: 1st Term</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Title</th>
+                            <th>Lec Units</th>
+                            <th>Lab Units</th>
+                            <th>Credit Units</th>
+                            <th>Prerequisite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CCS0001</td>
+                            <td>INTRODUCTION TO COMPUTING</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>CCS0003</td>
+                            <td>COMPUTER PROGRAMMING 1</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>GED0004</td>
+                            <td>PHYSICAL EDUCATION 1</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>GED0006</td>
+                            <td>PERSONAL AND PROFESSIONAL EFFECTIVENESS</td>
+                            <td>2</td>
+                            <td></td>
+                            <td>2</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>GED0009</td>
+                            <td>READINGS IN PHILIPPINE HISTORY</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>GED0011</td>
+                            <td>SCIENCE, TECHNOLOGY AND SOCIETY</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">TOTAL</td>
+                            <td>15</td>
+                            <td>2</td>
+                            <td>17</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+    
+            <div class="col-md-12 container term-2">
+                <h3>1st Year: 2nd Term</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Title</th>
+                            <th>Lec Units</th>
+                            <th>Lab Units</th>
+                            <th>Credit Units</th>
+                            <th>Prerequisite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CCS0005</td>
+                            <td>INTRODUCTION TO HUMAN COMPUTER INTERACTION</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>CCS0001</td>
+                        </tr>
+                        <tr>
+                            <td>CCS0007</td>
+                            <td>COMPUTER PROGRAMMING 2</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>CCS0003</td>
+                        </tr>
+                        <tr>
+                            <td>GED0001</td>
+                            <td>SPECIALIZED ENGLISH PROGRAM</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>GED0015</td>
+                            <td>PHYSICAL EDUCATION 2</td>
+                            <td>2</td>
+                            <td></td>
+                            <td>2</td>
+                            <td>GED0004</td>
+                        </tr>
+                        <tr>
+                            <td>GED0027</td>
+                            <td>MATHEMATICS IN MODERN WORLD</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>GED0085</td>
+                            <td>GENDER AND SOCIETY</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>IT0001</td>
+                            <td>BASIC INTERFACE DESIGN</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>NSTP1</td>
+                            <td>CIVIC WELFARE TRAINING SERVICE 1</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">TOTAL</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>19</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+    
+            <div class="col-md-12 container term-3">
+                <h3>1st Year: 3rd Term</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Title</th>
+                            <th>Lec Units</th>
+                            <th>Lab Units</th>
+                            <th>Credit Units</th>
+                            <th>Prerequisite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CCS0015</td>
+                            <td>DATA STRUCTURES AND ALGORITHMS</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>CCS0007</td>
+                        </tr>
+                        <tr>
+                            <td>CCS0105</td>
+                            <td>PROFESSIONAL DEVELOPMENT (COMPUTING PROFESSION)</td>
+                            <td>1</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>GED0006</td>
+                        </tr>
+                        <tr>
+                            <td>GED0007</td>
+                            <td>ART APPRECIATION</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>GED0023</td>
+                            <td>PHYSICAL EDUCATION 3</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td>GED0015</td>
+                        </tr>
+                        <tr>
+                            <td>GED0035</td>
+                            <td>THE CONTEMPORARY WORLD</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>GED0039</td>
+                            <td>APPLIED STATISTICS</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>3</td>
+                            <td>GED0027</td>
+                        </tr>
+                        <tr>
+                            <td>IT0043</td>
+                            <td>WEB DESIGN WITH CLIENT SIDE SCRIPTING</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>CCS0007</td>
+                        </tr>
+                        <tr>
+                            <td>NSTP2</td>
+                            <td>CIVIC WELFARE TRAINING SERVICE 2</td>
+                            <td></td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>NSTP1</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">TOTAL</td>
+                            <td>17</td>
+                            <td>2</td>
+                            <td>19</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+    
+            
+    
+    <div class="footer">
+        <div class="left">© 2024 FEU - INSTITUTE OF TECHNOLOGY</div>
+        <div class="right">Announcement</div>
+    </div>
+    
+
+</body>
+</html>

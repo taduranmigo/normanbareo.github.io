@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - FEU TECH</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            padding: 20px;
+            color: #323232
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg-image {
+            background: url('https://lh3.googleusercontent.com/d/16IBjA6U130QVwK9S91dk0veY-655Q0Bg') repeat-y center center fixed;
+            background-size: 120%;
+            background-position: left -5px top -50px;
+
+            padding: 20px;
+         
+ 
+        }
+
+        .bg-gray {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .left-content {
+            text-align: left;
+            padding-top: 125px;
+            padding-left: 20px;
+        }
+
+        .right-content{
+                padding-top: 15px;
+            }
+
+        .title {
+            color: #fcbd14;
+            font-size: 38px;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+
+        .content {
+            color: #ffff;
+            font-size: 16px;
+            font-weight: 450;
+        }
+
+        .company-logo {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .inline-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .inline-group input[type="text"],
+        .inline-group input[type="email"],
+        .inline-group input[type="tel"],
+        .inline-group input[type="date"],
+        .inline-group input[type="text"],
+        .inline-group input[type="password"],
+        .inline-group input[type="password"],
+        .inline-group select {
+            padding: 5px;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .inline-group label {
+            flex: 1;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="password"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #c5c5c5;
+            background-color: #e4e4e4;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="tel"] {
+            padding: 8px;
+        }
+
+        .form-check{
+            font-size: 12px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color:  #004b1c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #00200c;
+        }
+
+        .button-container{
+                margin-bottom: 60px;
+            }
+
+        .nav{
+            padding: 10px;
+        
+        }
+
+        .nav img{
+            width: 40px;
+            height: auto; 
+        }
+
+        .footer {
+            background-color: white;
+            padding-top: 10px;
+            margin-left: 0;
+            width: 100%;
+            
+            bottom: 0;
+            border-top: 1.5px dotted #b6b6b6; /* Added a gutter in the dotted line */
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+
+        .footer .left {
+            color: #b6b6b6;
+            font-size: 10px;
+        }
+
+        .footer .right {
+            font-size: 10px;
+            color: #b6b6b6;
+        }
+
+        .form-group h2, .additional-group h2{
+                font-size: 28px;
+            }
+
+        @media (max-width: 1200px) {
+            .bg-image {
+                background-size: 130%;
+                padding-top: 0;
+            }
+            .title {
+                font-size: 36px;
+            }
+            .content {
+                font-size: 14px;
+            }
+            .company-logo{
+                max-width: 320px;
+            }
+
+        }
+
+        @media (max-width: 1024px) {
+            .bg-image {
+                background-size: 140%;
+            }
+            .title {
+                font-size: 54px;
+                text-align: center;
+    
+            }
+            .content {
+                font-size: 15px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .company-logo{
+                max-width: 290px;
+            }
+           
+
+            .left-content{
+                padding-top: 30px;
+            }
+
+            .right-content{
+                padding-top: 15px;
+            }
+
+            .bg-image, .bg-gray {
+                flex: 1 0 100%;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .row {
+                align-items: center;
+            }
+
+            .nav{
+            padding: 10px;
+        
+             }
+
+            .nav img{
+            width: 30px;
+            height: auto; 
+            }
+        }
+
+        @media (max-width: 992px) {
+            .bg-image {
+                background-size: 140%;
+            }
+            .title {
+                font-size: 44px;
+                text-align: center;
+    
+            }
+            .content {
+                font-size: 13px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .company-logo{
+                max-width: 310px;
+            }
+         
+            .left-content{
+                padding-top: 30px;
+            }
+
+            .bg-image, .bg-gray {
+                flex: 1 0 100%;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .row {
+                align-items: center;
+            }
+
+            .nav{
+            padding: 10px;
+            font-size: 13px;
+             }
+
+            .nav img{
+            width: 30px;
+            height: auto; 
+            }
+        
+        }
+
+        @media (max-width: 768px) {
+            .bg-image {
+                background-size: 150%;
+         
+            }
+            .title {
+                font-size: 34px;
+            }
+
+            .content {
+                font-size: 12px;
+                margin-bottom: 20px; 
+            }
+            .company-logo{
+                max-width: 260px;
+            }
+
+            .left-content{
+                padding-top: 30px;
+            }
+
+            .nav{
+            padding: 10px;
+            font-size: 12px;
+             }
+
+            .nav img{
+            width: 25px;
+            height: auto; 
+            }
+
+            .form-group h2, .additional-group h2{
+                font-size: 28px;
+            }
+           
+        }
+
+        @media (max-width: 576px) {
+            .bg-image {
+                background-size: 160%;
+                padding-top: 0;
+            }
+            .title {
+                font-size: 30px;
+            }
+            .content {
+                font-size: 11px;
+                margin-bottom: 20px;
+            }
+            .company-logo{
+                max-width: 230px;
+            }
+
+            .left-content{
+                padding-top: 30px;
+            }
+
+            .nav{
+            padding: 10px;
+            font-size: 11px;
+             }
+
+            .nav img{
+            width: 22px;
+            height: auto; 
+            }
+            .form-group h2, .additional-group h2{
+                font-size: 26px;
+            }
+            
+        }
+
+        @media (max-width: 450px) {
+            .bg-image {
+                background-size: 160%;
+                padding-top: 0;
+            }
+            .title {
+                font-size: 28px;
+            }
+
+            .left-content{
+                padding-top: 20px;    
+            }
+
+            .content {
+                font-size: 9px;
+             
+            }
+            .company-logo{
+                max-width: 230px;
+            }
+            .form-group h2, .additional-group h2{
+                font-size: 24px;
+            }
+            
+            .left-content{
+                padding-top: 30px;
+            }
+
+            .nav{
+            padding: 10px;
+            font-size: 9px;
+             }
+
+            .nav img{
+            width: 20px;
+            height: auto; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 bg-image">
+                <div class="left-content">
+                    <h1 class="title">Welcome to the<br>FEU-Tech Student Portal<br>Registration Form!</h1>
+                        <p class="content">Please fill in the following information requested in order to complete <br> the student registration and activate your student portal account.</p>
+                </div>
+
+                <div class="nav">
+                    <a href="login.html" style="color: white; display: inline-block;">
+                        <img src="https://img.icons8.com/?size=100&id=60992&format=png&color=FFFFFF" alt="Login" style="vertical-align: middle; margin-right: 5px;"> Back to the Login Page
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 bg-gray">
+                <div class="right-content text-center">
+                    <img src="https://lh3.googleusercontent.com/d/1OYeIo8YG5f4KoxpS7OF-YHKLsVygpml0" alt="Company Logo" class="company-logo mb-4">
+                    <form id="passwordForm">
+                        <div class="form-group">
+                            <h2><strong>Student Information</strong></h2>
+                            <label for="firstName"><strong>Student Name</strong> <span style="color: red;">*</span></label>
+                            <div class="inline-group">
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        
+                            <div class="form-group">
+                                <div class="inline-group">
+                                    <label for="studentID"><strong>Student Number</strong> <span style="color: red;">*</span></label>
+                                    <label for="program"><strong>Program</strong> <span style="color: red;">*</span> </label>
+                                </div>
+                                <div class="inline-group">
+                                    <input type="text" id="studentID" name="studentID" placeholder="2000xxxxx" required">
+                                    <select id="program" name="program" required>
+                                        <option value="" disabled selected>Select Program</option>
+                                        <option value="IT-WMA">Information Technology - Web and Mobile Application</option>
+                                        <option value="IT-BA">Information Technology - Business Analytics</option>
+                                        <option value="IT-AGD">Information Technology - Animation and Game Development</option>
+                                        <option value="IT-CST">Information Technology - Cybersecurity</option>
+                                        <option value="CS-AI">Computer Science - Artificial Intelligence</option>
+                                        <option value="CS-SE">Computer Science - Software Engineering</option>
+                                        <option value="CS-DS">Computer Science - Data Science</option>
+                                        <option value="MMA">Multimedia Arts - Animation and Digital Film</option>
+                                        <option value="CE">Civil Engineering</option>
+                                        <option value="ME">Mechanical Engineering</option>
+                                        <option value="ECE">Electronics and Communications Engineering</option>
+                                        <option value="EE">Electrical Engineering</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="inline-group">
+                                    <label for="gender"><strong>Gender</strong> <span style="color: red;">*</span> </label>
+                                    <label for="dob"><strong>Date of Birth</strong> <span style="color: red;">*</span></label>
+                                </div>
+                                <div class="inline-group">
+                                    <select id="gender" name="gender" required>
+                                        <option value="" disabled selected>Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                        <option value="Prefer not to say">Prefer not to say</option>
+                                    </select>
+                                    <input type="date" id="dob" name="dob" required>
+                                </div>
+                            </div>
+                           
+                            <div class="form-group">
+                                <div class="inline-group">
+                                    <label for="marital"><strong>Marital Status</strong> <span style="color: red;">*</span> </label>
+                                    <label for="studentType"><strong>Student Status</strong> <span style="color: red;">*</span></label>
+                                </div>
+                                <div class="inline-group">
+                                    <select id="marital" name="marital" required>
+                                        <option value="" disabled selected>Select Marital Status</option>
+                                        <option value="Single">Single</option>
+                                        <option value="Married">Married</option>
+                                        <option value="Divorced">Divorced</option>
+                                        <option value="Widowed">Widowed</option>
+                                    </select>
+                                    <select id="studentType" name="studentcType" required>
+                                        <option value="" disabled selected>Select Student Type</option>
+                                        <option value="local">Local Student (Filipino)</option>
+                                        <option value="intl">International Student</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="inline-group">
+                                    <label for="email"><strong>Email</strong> <span style="color: red;">*</span> </label>
+                                    <label for="phone"><strong>Phone</strong> <span style="color: red;">*</span> </label>
+                                </div>
+                                <div class="inline-group">
+                                    <input type="email" id="email" name="email" placeholder="2000xxxxx@fit.edu.ph"required>
+                                    <input type="tel" id="phone" name="phone" placeholder="+63" required inputmode="numeric" pattern="\d*">
+                                </div>
+                            </div>
+                        
+    
+                          
+                                <div class="form-group">
+                                    <div class="inline-group">
+                                        <label for="password"><strong>Password</strong> <span style="color: red;">*</span></label>
+                                        <label for="confirm_password"><strong>Confirm Password</strong> <span style="color: red;">*</span></label>
+                                    
+                                    </div>
+                                    <div class="inline-group">
+                                        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                                    </div>
+                                </div>
+                      
+                        
+                           
+                            <div class="form-group">
+                                <label for="streetAddress"><strong>Home Address</strong> <span style="color: red;">*</span></label>
+                                <input type="text" id="homeAddress" name="homeAddress" placeholder="Home Address" required>
+                                <div class="inline-group">
+                                    <label for="city"><strong>City</strong> <span style="color: red;">*</span> </label>
+                                    <label for="province"><strong>Province</strong> <span style="color: red;">*</span></label>
+                                </div>
+                                <div class="inline-group">
+                                    <input type="text" id="city" name="city" placeholder="City/Municipality" required>
+                                    <select id="province" name="Province" required>
+                                        <option value="" disabled selected>Select Province</option>
+                                        <option value="Abra">Abra</option>
+                                        <option value="Agusan del Norte">Agusan del Norte</option>
+                                        <option value="Agusan del Sur">Agusan del Sur</option>
+                                        <option value="Aklan">Aklan</option>
+                                        <option value="Albay">Albay</option>
+                                        <option value="Antique">Antique</option>
+                                        <option value="Apayao">Apayao</option>
+                                        <option value="Aurora">Aurora</option>
+                                        <option value="Basilan">Basilan</option>
+                                        <option value="Bataan">Bataan</option>
+                                        <option value="Batanes">Batanes</option>
+                                        <option value="Batangas">Batangas</option>
+                                        <option value="Benguet">Benguet</option>
+                                        <option value="Biliran">Biliran</option>
+                                        <option value="Bohol">Bohol</option>
+                                        <option value="Bukidnon">Bukidnon</option>
+                                        <option value="Bulacan">Bulacan</option>
+                                        <option value="Cagayan">Cagayan</option>
+                                        <option value="Camarines Norte">Camarines Norte</option>
+                                        <option value="Camarines Sur">Camarines Sur</option>
+                                        <option value="Camiguin">Camiguin</option>
+                                        <option value="Capiz">Capiz</option>
+                                        <option value="Catanduanes">Catanduanes</option>
+                                        <option value="Cavite">Cavite</option>
+                                        <option value="Cebu">Cebu</option>
+                                        <option value="Compostela Valley">Compostela Valley</option>
+                                        <option value="Cotabato">Cotabato</option>
+                                        <option value="Davao del Norte">Davao del Norte</option>
+                                        <option value="Davao del Sur">Davao del Sur</option>
+                                        <option value="Davao Occidental">Davao Occidental</option>
+                                        <option value="Davao Oriental">Davao Oriental</option>
+                                        <option value="Dinagat Islands">Dinagat Islands</option>
+                                        <option value="Eastern Samar">Eastern Samar</option>
+                                        <option value="Guimaras">Guimaras</option>
+                                        <option value="Ifugao">Ifugao</option>
+                                        <option value="Ilocos Norte">Ilocos Norte</option>
+                                        <option value="Ilocos Sur">Ilocos Sur</option>
+                                        <option value="Iloilo">Iloilo</option>
+                                        <option value="Isabela">Isabela</option>
+                                        <option value="Kalinga">Kalinga</option>
+                                        <option value="La Union">La Union</option>
+                                        <option value="Laguna">Laguna</option>
+                                        <option value="Lanao del Norte">Lanao del Norte</option>
+                                        <option value="Lanao del Sur">Lanao del Sur</option>
+                                        <option value="Leyte">Leyte</option>
+                                        <option value="Maguindanao">Maguindanao</option>
+                                        <option value="Marinduque">Marinduque</option>
+                                        <option value="Masbate">Masbate</option>
+                                        <option value="Metro Manila">Metro Manila</option>
+                                        <option value="Mindoro Occidental">Mindoro Occidental</option>
+                                        <option value="Mindoro Oriental">Mindoro Oriental</option>
+                                        <option value="Misamis Occidental">Misamis Occidental</option>
+                                        <option value="Misamis Oriental">Misamis Oriental</option>
+                                        <option value="Mountain Province">Mountain Province</option>
+                                        <option value="Negros Occidental">Negros Occidental</option>
+                                        <option value="Negros Oriental">Negros Oriental</option>
+                                        <option value="Northern Samar">Northern Samar</option>
+                                        <option value="Nueva Ecija">Nueva Ecija</option>
+                                        <option value="Nueva Vizcaya">Nueva Vizcaya</option>
+                                        <option value="Occidental Mindoro">Occidental Mindoro</option>
+                                        <option value="Oriental Mindoro">Oriental Mindoro</option>
+                                        <option value="Palawan">Palawan</option>
+                                        <option value="Pampanga">Pampanga</option>
+                                        <option value="Pangasinan">Pangasinan</option>
+                                        <option value="Quezon">Quezon</option>
+                                        <option value="Quirino">Quirino</option>
+                                        <option value="Rizal">Rizal</option>
+                                        <option value="Romblon">Romblon</option>
+                                        <option value="Samar">Samar</option>
+                                        <option value="Sarangani">Sarangani</option>
+                                        <option value="Siquijor">Siquijor</option>
+                                        <option value="Sorsogon">Sorsogon</option>
+                                        <option value="South Cotabato">South Cotabato</option>
+                                        <option value="Southern Leyte">Southern Leyte</option>
+                                        <option value="Sultan Kudarat">Sultan Kudarat</option>
+                                        <option value="Sulu">Sulu</option>
+                                        <option value="Surigao del Norte">Surigao del Norte</option>
+                                        <option value="Surigao del Sur">Surigao del Sur</option>
+                                        <option value="Tarlac">Tarlac</option>
+                                        <option value="Tawi-Tawi">Tawi-Tawi</option>
+                                        <option value="Zambales">Zambales</option>
+                                        <option value="Zamboanga del Norte">Zamboanga del Norte</option>
+                                        <option value="Zamboanga del Sur">Zamboanga del Sur</option>
+                                        <option value="Zamboanga Sibugay">Zamboanga Sibugay</option>
+                                    </select>
+                                </div>
+                                <div class="inline-group">
+                                    <label for="region"><strong>Region</strong> <span style="color: red;">*</span> </label>
+                                    <label for="zipcode"><strong>Zip Code</strong> <span style="color: red;">*</span> </label>
+                                </div>
+                                <div class="inline-group">
+                                    <select id="region" name="region" required>
+                                        <option value="" disabled selected>Select Region</option>
+                                        <option value="National Capital Region (NCR)">National Capital Region (NCR)</option>
+                                        <option value="Ilocos Region">Ilocos Region</option>
+                                        <option value="Cagayan Valley">Cagayan Valley</option>
+                                        <option value="Central Luzon">Central Luzon</option>
+                                        <option value="CALABARZON">CALABARZON</option>
+                                        <option value="MIMAROPA">MIMAROPA</option>
+                                        <option value="Bicol Region">Bicol Region</option>
+                                        <option value="Western Visayas">Western Visayas</option>
+                                        <option value="Central Visayas">Central Visayas</option>
+                                        <option value="Eastern Visayas">Eastern Visayas</option>
+                                        <option value="Zamboanga Peninsula">Zamboanga Peninsula</option>
+                                        <option value="Northern Mindanao">Northern Mindanao</option>
+                                        <option value="Davao Region">Davao Region</option>
+                                        <option value="SOCCSKSARGEN">SOCCSKSARGEN</option>
+                                        <option value="Caraga">Caraga</option>
+                                        <option value="BARMM">BARMM</option>
+                                    </select>
+                                    <input type="text" id="zipcode" name="zipcode" placeholder="Zip Code" required inputmode="numeric" pattern="\d*">
+                                </div>
+
+                                <br>
+                                <div class="additional-section">
+                                    <h2><strong>Parent Information</strong> </h2>
+                                
+                                    <div class="form-group">
+                                        <div class="inline-group">
+                                            <label for="fatherFirstName"><strong>Father Name</strong> <span style="color: red;">*</span></label>
+                
+                                        </div>
+                                        <div class="inline-group">
+                                            <input type="text" id="fatherFirstName" name="fatherFirstName" placeholder="First Name">
+                                            <input type="text" id="fatherLastName" name="fatherLastName" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="inline-group">
+                                            <label for="fatherEmail"><strong>Email</strong></label>
+                                            <label for="fatherContact"><strong>Phone</strong><span style="color: red;">*</span></label>
+                                           
+                                        </div>
+                                        <div class="inline-group">
+                                            <input type="email" id="fatherEmail" name="fatherEmail" placeholder="Email">
+                                            <input type="tel" id="fatherContact" name="fatherContact" placeholder="Contact" required inputmode="numeric" pattern="\d*">
+                                         
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="form-group">
+                                        <div class="inline-group">
+                                            <label for="motherFirstName"><strong>Mother Name</strong><span style="color: red;">*</span></label>
+                                          
+                                        </div>
+                                        <div class="inline-group">
+                                            <input type="text" id="motherFirstName" name="motherFirstName" placeholder="First Name">
+                                            <input type="text" id="motherLastName" name="motherLastName" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="inline-group">
+                                            <label for="fatherEmail"><strong>Email</strong></label>
+                                            <label for="fatherContact"><strong>Phone</strong><span style="color: red;">*</span></label>
+                                            
+                                        </div>
+                                        <div class="inline-group">
+                                            <input type="email" id="motherEmail" name="motherEmail" placeholder="Email">
+                                            <input type="tel" id="motherContact" name="motherContact" placeholder="Contact" required inputmode="numeric" pattern="\d*">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                
+                                <div class="additional-section">
+                                    <h2><strong>Guardian Information</strong></h2>
+                                    <div class="form-group">
+                                        <div class="inline-group">
+                                            <label for="guardianFirstName"><strong>Guardian Name</strong></label>
+            
+                                        </div>
+                                        <div class="inline-group">
+                                            <input type="text" id="guardianFirstName" name="guardianFirstName" placeholder="First Name">
+                                            <input type="text" id="guardianLastName" name="guardianLastName" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="inline-group">
+                                            <label for="guardianEmail"><strong>Email</strong></label>
+                                            <label for="guardianContact"><strong>Phone</strong></label>
+                                        
+                                        </div>
+                                        <div class="inline-group">
+                                            <input type="email" id="guardianEmail" name="guardianEmail" placeholder="Email">
+                                            <input type="tel" id="guardianContact" name="guardianContact" placeholder="Contact" inputmode="numeric" pattern="\d*">
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                        
+
+
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="certifyCheckbox" required>
+                            <label class="form-check-label" for="certifyCheckbox">
+                                I hereby certify that all the information provided above is true and accurate to the best of my knowledge.
+                            </label>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="button-container">
+                                <button type="submit">REGISTER STUDENT</button>
+                            
+                        </div>
+                    </form>
+                </div>
+                <div class="footer">
+                    <div class="left">© 2024 FEU - INSTITUTE OF TECHNOLOGY</div>
+                    <div class="right">Announcement</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            else {
+                alert('Your student portal account has been activated. You may now log in to your account.');
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+    
+</body>
+</html>
