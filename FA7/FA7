@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login - FEU Canvas</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -21,13 +21,13 @@
         }
 
         .login-container {
-   
-    padding: 20px;
-    
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-}
+        
+            padding: 20px;
+            
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
 
         .header {
             display: flex;
@@ -86,17 +86,17 @@
         }
 
         .login-btn {
-    padding: 10px 20px;
-    border: solid white;
-    border-width: 1px;
-    width: 30%;
-    border-radius: 3px;
-    background-color: transparent;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    margin-top: 10px;
-}
+            padding: 10px 20px;
+            border: solid white;
+            border-width: 1px;
+            width: 30%;
+            border-radius: 3px;
+            background-color: transparent;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
     
 
         .forgot-password {
@@ -192,7 +192,7 @@
                 <button type="button" class="login-btn" onclick="validateForm()">Log In</button>
             </div>
             <div class="forgot-password">
-                <a href="YOUR_FORGOT_PASSWORD_LINK">Forgot Password?</a>
+                <a href="#">Forgot Password?</a>
             </div>
             <hr>
             <div class="links">
