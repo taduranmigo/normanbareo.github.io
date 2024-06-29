@@ -9,14 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script type="text/javascript">
 
-		function validateForm() {
-			var studentNumber = document.getElementById('studentnumber').value;
-			if (isNaN(studentNumber)) {
-				alert('Student Number must be a number.');
-				return false;
-			}
-			return true;
-		}
 
         function redirectToRegistration(event) {
             event.preventDefault();
@@ -591,5 +583,16 @@
             </div>
         </div>
     </div>
+	<script>
+		
+		function validateForm() {
+			var studentNumber = document.getElementById('studentnumber').value;
+			if (isNaN(studentNumber)) {
+				alert('Student Number must be a number.');
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>
