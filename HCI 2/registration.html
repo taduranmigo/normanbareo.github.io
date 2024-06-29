@@ -759,12 +759,25 @@
                 alert('Passwords do not match!');
                 return;
             }
-
-            else {
-                alert('Your student portal account has been activated. You may now log in to your account.');
-                window.location.href = 'login.html';
-            }
         });
+
+        function validateForm(event) 
+	{
+    		var studentNumber = document.getElementById('studentID').value;
+   		 if (isNaN(studentNumber) || studentNumber.trim() === '') 
+		 {
+		        alert('Student Number must be a number!');
+		        event.preventDefault();
+		        return false;
+   		 }
+    		return true;
+	}
+
+
+  function redirectToLogin(event) {
+            alert('Your student portal account has been activated. You may now log in to your account.');
+            window.location.href = 'profile.html';
+        }
     </script>
     
 </body>
