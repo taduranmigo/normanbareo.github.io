@@ -7,14 +7,6 @@
     <link href='https://students.feutech.edu.ph/_public/favicon.ico' rel='icon' type='image/x-icon'/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <script type="text/javascript">
-
-
-        function redirectToRegistration(event) {
-            event.preventDefault();
-            window.location.href = 'profile.html';
-        }
-    </script>
     <style>
       body {
             font-family: 'Open Sans', sans-serif;
@@ -597,6 +589,11 @@
 	}
 
 	document.querySelector('form').addEventListener('submit', validateForm);
+
+  function redirectToProfile(event) {
+            event.preventDefault();
+            window.location.href = 'profile.html';
+        }
 	</script>
 </body>
 </html>
