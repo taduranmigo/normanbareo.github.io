@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script type="text/javascript">
+
+		function validateForm() {
+			var studentNumber = document.getElementById('studentnumber').value;
+			if (isNaN(studentNumber)) {
+				alert('Student Number must be a number.');
+				return false;
+			}
+			return true;
+		}
+
         function redirectToRegistration(event) {
             event.preventDefault();
             window.location.href = 'profile.html';
