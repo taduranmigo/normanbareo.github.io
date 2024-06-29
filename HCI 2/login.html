@@ -584,15 +584,19 @@
         </div>
     </div>
 	<script>
-		
-		function validateForm() {
-			var studentNumber = document.getElementById('studentnumber').value;
-			if (isNaN(studentNumber)) {
-				alert('Student Number must be a number.');
-				return false;
-			}
-			return true;
-		}
+	function validateForm(event) 
+	{
+    		var studentNumber = document.getElementById('studentnumber').value;
+   		 if (isNaN(studentNumber) || studentNumber.trim() === '') 
+		 {
+		        alert('Student Number must be a number.');
+		        event.preventDefault();
+		        return false;
+   		 }
+    		return true;
+	}
+
+	document.querySelector('form').addEventListener('submit', validateForm);
 	</script>
 </body>
 </html>
