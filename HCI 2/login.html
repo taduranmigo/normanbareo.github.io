@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal - FEU TECH</title>
-    <link href='https://students.feutech.edu.ph/_public/favicon.ico' rel='icon' type='image/x-icon'/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        function redirectToRegistration(event) {
+            event.preventDefault();
+            window.location.href = 'profile.html';
+        }
+    </script>
     <style>
       body {
             font-family: 'Open Sans', sans-serif;
@@ -502,7 +507,7 @@
                         <br>
                         <div class="login-row">
                             <img  src="https://img.icons8.com/?size=100&id=9466&format=png&color=FFFFFF" alt="Logo">
-                            <span>View your current schedule, academic grades,<br>assessment, clearances, and curriculum</span>
+                            <span>View your current schedule, academic grades, assessment, <br> clearances, and curriculum</span>
                         </div>
                         <br>
                         <div class="login-row">
@@ -575,25 +580,5 @@
             </div>
         </div>
     </div>
-	<script>
-	function validateForm(event) 
-	{
-    		var studentNumber = document.getElementById('studentnumber').value;
-   		 if (isNaN(studentNumber) || studentNumber.trim() === '') 
-		 {
-		        alert('Student Number must be a number.');
-		        event.preventDefault();
-		        return false;
-   		 }
-    		return true;
-	}
-
-	document.querySelector('form').addEventListener('submit', validateForm);
-
-  function redirectToProfile(event) {
-            event.preventDefault();
-            window.location.href = 'profile.html';
-        }
-	</script>
 </body>
 </html>
