@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Student Portal Registration - FEU TECH</title>
+    <link href='https://students.feutech.edu.ph/_public/favicon.ico' rel='icon' type='image/x-icon'/>
+    <link type='text/css' rel='stylesheet' href='https://students.feutech.edu.ph/_public/css/default.css' />
+    <link type='text/css' rel='stylesheet' href='https://students.feutech.edu.ph/_public/css/button.css' />
+    <link type='text/css' rel='stylesheet' href='https://students.feutech.edu.ph/_public/third_party/noticeui/css/noticeui.css' />
+    <link type='text/css' rel='stylesheet' href='https://students.feutech.edu.ph/_public/css/login.css' />
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="hdr-logo"><img src="https://students.feutech.edu.ph/_public/img/header-logo.png" width="31" height="42" /></div>
+            <h1>FEU INSTITUTE OF TECHNOLOGY</h1>
+            <div class="hdr-sign-up">
+             
+            </div>
+        </div>
+
+        <div id="body-login">
+            <div class="content">
+                <h3>Student Portal Registration</h3>
+                <p>Register to gain access to the Student Portal and:</p>
+                <ul>
+                    <li class="personal">View your personal information</li>
+                    <li class="activity">View your current schedule, academic grades, assessment, clearances, and curriculum</li>
+                    <li class="oses">Enroll online</li>
+                    <li class="gmail">Access and manage your student gmail</li>
+                </ul>
+                <br />
+                <ul class="help">
+                    <li><a href='#' onclick="window.open('https://www.feutech.edu.ph/', '_blank');">Announcement</a></li>
+                </ul>
+                <div class="clear"></div>
+                <div class="hr"><hr /></div>
+                <p>Follow us on:</p>
+                <ul class="follow">
+                    <li class="facebook"><a href='#' onclick="window.open('https://www.facebook.com/FEUTechOfficial', '_blank');">Facebook</a></li>
+                    <li class="twitter"><a href='#' onclick="window.open('https://twitter.com/FEUTechOfficial', '_blank');">Twitter</a></li>
+                    <li class="youtube"><a href='#' onclick="window.open('https://www.youtube.com/user/TheFEUEAC', '_blank');">YouTube</a></li>
+                </ul>
+            </div>
+
+            <div class="form">
+                <p class="sign-in">Sign Up</p>
+                <div class="clear"></div>
+                <form id="passwordForm" class="standard-form" onsubmit="return validateRegistrationForm()">
+                    <label for="first_name">First Name</label><br />
+                    <input type="text" name="first_name" id="first_name" style="width:98%" required /><br />
+                    <label for="last_name">Last Name</label><br />
+                    <input type="text" name="last_name" id="last_name" style="width:98%" required /><br />
+                    <label for="student_number">Student Number</label><br />
+                    <input type="text" name="student_number" id="student_number" autocomplete="off" style="width:98%" required /><br />
+                    <label for="email">Email</label><br />
+                    <input type="email" name="email" id="email" style="width:98%" required /><br />
+                    <label for="citizenship">Citizenship</label><br />
+                    <input type="text" name="citizenship" id="citizenship" style="width:98%" required /><br />
+                    <label for="program">Program</label><br />
+                    <select name="program" id="program" style="width:98%" required>
+                        <option value="" disabled selected>Select Program</option>
+                        <option value="IT-WMA">Information Technology - Web and Mobile Application</option>
+                        <option value="IT-BA">Information Technology - Business Analytics</option>
+                        <option value="IT-AGD">Information Technology - Animation and Game Development</option>
+                        <option value="IT-CST">Information Technology - Cybersecurity</option>
+                        <option value="CS-AI">Computer Science - Artificial Intelligence</option>
+                        <option value="CS-SE">Computer Science - Software Engineering</option>
+                        <option value="CS-DS">Computer Science - Data Science</option>
+                        <option value="MMA">Multimedia Arts - Animation and Digital Film</option>
+                        <option value="CE">Civil Engineering</option>
+                        <option value="ME">Mechanical Engineering</option>
+                        <option value="ECE">Electronics and Communications Engineering</option>
+                        <option value="EE">Electrical Engineering</option>
+                    </select><br />
+                    <label for="password">Password</label><br />
+                    <input type="password" name="password" id="password" style="width:98%" required /><br />
+                    <label for="confirm_password">Confirm Password</label><br />
+                    <input type="password" name="confirm_password" id="confirm_password" style="width:98%" required /><br />
+                    <input type="submit" name="sign_up" value="Sign Up" class="medium button green"/>
+                </form>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+        <br />
+        <div id="footer">
+            <div class="hr"><hr /></div>
+            <div class="left">&copy; 2024 FEU INSTITUTE OF TECHNOLOGY</div>
+            <div class="right"><a href='#' onclick="window.open('https://www.feutech.edu.ph/', '_blank');">Announcement</a></div>
+        </div>
+    </div>
+
+    <script>
+         document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return false; // Prevent form submission if validation fails
+            }
+
+            else {
+                alert('Your student portal account has been activated. You may now log in to your account.');
+                window.location.href = 'FEU_login.html';
+            }
+        });
+
+       
+    </script>
+</body>
+</html>

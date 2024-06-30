@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Student Portal - FEU TECH</title>
+    <link href='https://students.feutech.edu.ph/_public/favicon.ico' rel='icon' type='image/x-icon'/>
+    <link type='text/css' rel='stylesheet' href='https://students.feutech.edu.ph/_public/css/default.css' />
+    <link type='text/css' rel='stylesheet' href='https://students.feutech.edu.ph/_public/css/button.css' />
+    <link type='text/css' rel='stylesheet' href='https://students.feutech.edu.ph/_public/third_party/noticeui/css/noticeui.css' />
+    <link type='text/css' rel='stylesheet' href='https://students.feutech.edu.ph/_public/css/login.css' />
+
+   
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="hdr-logo"><img src="https://students.feutech.edu.ph/_public/img/header-logo.png" width="31" height="42" /></div>
+            <h1>FEU INSTITUTE OF TECHNOLOGY</h1>
+        </div>
+
+        <div id="body-login">
+            <div class="content">
+                <h3>Student Portal</h3>
+                <p>With your Student Portal, you can:</p>
+                <ul>
+                    <li class="personal">View your personal information</li>
+                    <li class="activity">View your current schedule, academic grades, assessment, clearances, and curriculum</li>
+                    <li class="oses">Enroll online</li>
+                    <li class="gmail">Access and manage your student gmail</li>
+                </ul>
+                <br />
+                <ul class="help">
+                    <li><a href='#' onclick="window.open('https://www.feutech.edu.ph/', '_blank');">Announcement</a></li>
+                </ul>
+                <div class="clear"></div>
+                <div class="hr"><hr /></div>
+                <p>Follow us on:</p>
+                <ul class="follow">
+                    <li class="facebook"><a href='#' onclick="window.open('https://www.facebook.com/FEUTechOfficial', '_blank');">Facebook</a></li>
+                    <li class="twitter"><a href='#' onclick="window.open('https://twitter.com/FEUTechOfficial', '_blank');">Twitter</a></li>
+                    <li class="youtube"><a href='#' onclick="window.open('https://www.youtube.com/user/TheFEUEAC', '_blank');">YouTube</a></li>
+                </ul>
+            </div>
+
+            <div class="form">
+                <p class="sign-in">Sign In</p>
+                <div class="clear"></div>
+                <form id="loginForm" class="standard-form" onsubmit="redirectToProfile(event)">
+                    <label for="student_number">Student Number</label><br />
+                    <input type="text" name="student_number" id="student_number" autocomplete="off" style="width:98%" required /><br />
+                    <label for="password">Password</label><br />
+                    <input type="password" name="password" id="password" style="width:98%" required /><br />
+                    <input type="submit" name="sign_in" value="Sign In" class="medium button green"/>
+                    <a class="register" style="margin-left: 15px;" href="FEU_registration.html">Register</a>
+                </form>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+        <br />
+        <div id="footer">
+            <div class="hr"><hr /></div>
+            <div class="left">&copy; 2024 FEU INSTITUTE OF TECHNOLOGY</div>
+            <div class="right"><a href='#' onclick="window.open('https://www.feutech.edu.ph/', '_blank');">Announcement</a></div>
+        </div>
+    </div>
+
+    <script>
+
+        function redirectToProfile(event) {
+            event.preventDefault();
+            window.location.href = 'FEU_profile.html';
+    }
+    </script>
+</body>
+</html>
