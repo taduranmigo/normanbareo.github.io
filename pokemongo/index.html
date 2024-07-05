@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon GO Merchandise</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Custom styles */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -105,12 +104,11 @@
         <div class="container">
             <h1>Pokémon GO Merchandise</h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
                 </ul>
             </nav>
         </div>
@@ -119,7 +117,7 @@
         <div class="container">
             <h2>Catch 'Em All with Style!</h2>
             <p>Explore our exclusive collection of Pokémon GO merchandise. Find the perfect gear to enhance your adventure.</p>
-            <a href="#products" class="cta-button">Shop Now</a>
+            <a href="#products" class="btn btn-warning btn-lg cta-button">Shop Now</a>
         </div>
     </section>
     <section id="about">
@@ -143,7 +141,7 @@
         <div class="container">
             <h2>Our Products</h2>
             <p>Check out our diverse range of Pokémon GO merchandise. From T-shirts to hats, from backpacks to phone cases, we have everything a trainer needs!</p>
-            <a href="products.html" class="download-link">View Products</a>
+            <a href="products.html" class="btn btn-primary btn-lg download-link">View Products</a>
         </div>
     </section>
     <footer>
@@ -151,5 +149,10 @@
             <p>&copy; 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK inc. Pokémon and Pokémon character names are trademarks of Nintendo.</p>
         </div>
     </footer>
+
+    <!-- Bootstrap JS and dependencies (Optional, for Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
