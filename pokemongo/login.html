@@ -16,6 +16,36 @@
             height: 100vh;
         }
 
+         header {
+            background: #3b4cca;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
         .login-container {
             background: #fff;
             padding: 20px;
@@ -64,6 +94,20 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Pokémon GO Merchandise</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div class="login-container">
         <h2>Login</h2>
         <form action="dashboard.html" method="POST">
