@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Pokémon GO Merchandise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #3b4cca;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .back-link a {
+            color: #3b4cca;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Pokémon GO Merchandise</h1>
+        <p>Welcome to Pokémon GO Merchandise, your one-stop shop for Pokémon-themed merchandise and apparel. We bring you a wide range of products inspired by the Pokémon universe, from clothing and accessories to collectibles and more.</p>
+        <p>Our mission is to provide fans with high-quality merchandise that celebrates their love for Pokémon. Whether you're a seasoned Trainer or just starting your journey, we have something for everyone.</p>
+        <p>Explore our store, discover new arrivals, and find the perfect gear to express your passion for Pokémon!</p>
+        
+        <div class="back-link">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
